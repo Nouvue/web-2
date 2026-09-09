@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nouvue | Home & Property Cleaning in Uxbridge & Hillingdon</title>
+    <meta
+      name="description"
+      content="Reliable home and property cleaning across Uxbridge, West Drayton and the wider Hillingdon area. Regular cleaning, home resets and property resets."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='27' y='36' width='60' height='42' fill='%230A3478' fill-opacity='0.22' stroke='%230A3478' stroke-width='2'/%3E%3Crect x='13' y='23' width='60' height='42' fill='none' stroke='%230F52BA' stroke-width='3'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!--
+      Netlify Forms detection.
+      Netlify scans the built static HTML for a <form> with data-netlify="true"
+      at deploy time to register the form. The real, interactive enquiry form is
+      rendered by React (see src/components/EnquiryFlow.jsx) and submits to "/"
+      with the same name + fields via fetch — this hidden copy exists purely so
+      Netlify's build-time scanner can find and register the form shape.
+      Do not remove or rename fields here without updating EnquiryFlow.jsx to match.
+    -->
+    <form name="nouvue-enquiry" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="bot-field" />
+      <input type="text" name="service" />
+      <input type="text" name="postcode" />
+      <input type="text" name="propertyType" />
+      <input type="text" name="date" />
+      <input type="text" name="priorities" />
+      <input type="text" name="pets" />
+      <input type="text" name="access" />
+      <input type="text" name="notes" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="privacyAck" />
+    </form>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
