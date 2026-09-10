@@ -75,7 +75,7 @@ export const SERVICES = [
     line: "PROPERTY",
     name: "Moving & Property Preparation",
     desc: "Cleaning for move-ins, move-outs, tenancy transitions, handovers and viewings.",
-    price: "From £199",
+    price: "From £195",
     unit: "one-off",
     basis: "A property ready for what comes next. Final scope confirmed before booking.",
     cta: "Get Your Quote",
