@@ -64,7 +64,7 @@ export const SERVICES = [
     line: "HOME",
     name: "Deep Home Reset",
     desc: "A more detailed service for homes needing additional attention — seasonal resets, busy periods, or pre-event preparation.",
-    price: "From £195",
+    price: "From £150",
     unit: "one-off",
     basis: "Bring the home back to a better baseline. Final price depends on the property, condition and agreed scope.",
     cta: "Get Your Quote",
