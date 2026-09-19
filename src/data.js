@@ -50,21 +50,22 @@ export const RESULTS_VERIFIED = ASSET_MANIFEST.filter(
    ============================================================ */
 
 // One cleaner working for one hour equals one cleaner-hour. Two
-// cleaners for three hours is six cleaner-hours. This single line is
-// reused wherever the hybrid pricing needs explaining, so the wording
-// stays identical across the site.
+// cleaners for three hours is six cleaner-hours. Kept for the FAQ
+// explanation only — not used in the main service cards or hero,
+// since customers shouldn't be asked to think about staffing maths
+// there.
 export const CLEANER_HOUR_EXPLAINER =
-  "One cleaner working for one hour equals one cleaner-hour. Two cleaners working for three hours is six cleaner-hours — priced the same either way, so the total reflects the work involved, not how many people happen to do it.";
+  "Rates are shown per cleaner. If more than one cleaner is assigned, the total reflects the combined time. You'll always receive your expected total before confirming your booking.";
 
 export const SERVICES = [
   {
     idx: "01",
     line: "HOME",
     name: "Regular Home Care",
-    desc: "Weekly or fortnightly cleaning and housekeeping designed to keep the home consistently cared for.",
+    desc: "Weekly or fortnightly home cleaning designed to keep your space consistently cared for.",
     price: `From £${RECURRING_RATE_FROM}`,
-    unit: "per cleaner-hour",
-    basis: "Less catching up. More staying on top of things. You'll receive an expected total quote before booking. Appliance interiors are available as an add-on, not included by default.",
+    unit: "per hour, per cleaner",
+    basis: "A clear recurring cleaning scope, completed with the Nouvue Finish. You'll receive an expected total before booking. Appliance interiors and additional detailed tasks can be added separately where needed.",
     cta: "Get My Quote",
     key: "regular",
   },
@@ -72,10 +73,10 @@ export const SERVICES = [
     idx: "02",
     line: "HOME",
     name: "Premium Housekeeping",
-    desc: "A higher-touch service that can include bed changes, laundry folding, light organisation, kitchen reset and guest preparation alongside cleaning.",
+    desc: "Cleaning plus agreed household support for homes that need more than routine upkeep — bed changes, laundry folding, light organisation, kitchen resets and guest preparation alongside cleaning.",
     price: `From £${HOUSEKEEPING_RATE_FROM}`,
-    unit: "per cleaner-hour",
-    basis: "Household finishing tasks, agreed in advance. You'll receive an expected total quote before booking.",
+    unit: "per hour, per cleaner",
+    basis: "Your housekeeping priorities are agreed in advance, with an expected total confirmed before booking.",
     cta: "Get My Quote",
     key: "housekeeping",
   },
@@ -115,12 +116,12 @@ export const SERVICES = [
 ];
 
 export const ADD_ONS = [
-  "Oven interior",
-  "Fridge interior",
-  "Inside kitchen cupboards",
-  "Interior windows where accessible",
-  "Additional detailed kitchen attention",
-  "Other property-specific requests by quotation",
+  { name: "Oven interior", price: "From £55" },
+  { name: "Fridge interior", price: "From £30" },
+  { name: "Inside kitchen cupboards", price: "From £40" },
+  { name: "Interior windows", price: "From £35" },
+  { name: "Kitchen Detail Reset", price: "Quoted to scope" },
+  { name: "Other requested tasks", price: "Quoted in advance" },
 ];
 
 export const FINISH_ITEMS = [
@@ -155,11 +156,11 @@ export const PROCESS_PROPERTY = [
 
 export const HOME_CLUB_BENEFITS = [
   { t: "Reserved recurring appointment", d: "Your slot is held on a schedule that suits your household." },
-  { t: "Preferred recurring rate", d: "Recurring Home Care is priced more favourably than one-off booking." },
+  { t: "Preferred recurring pricing", d: "Your rate reflects an agreed weekly or fortnightly routine and consistent service scope." },
   { t: "Priority rescheduling", d: "Recurring visits get priority if a date needs to move." },
   { t: "Same cleaner or team where practicable", d: "Continuity so your home is looked after by people who know it." },
   { t: "Products included", d: "No need to keep the cupboard stocked for us." },
-  { t: "Preferred pricing on selected extras and resets", d: "Home Club membership carries through to occasional additional work." },
+  { t: "Preferred pricing on selected extras and resets", d: "Home Club customers receive preferred pricing on selected extras and occasional resets." },
 ];
 
 export const TRUST_ITEMS = [
@@ -202,12 +203,12 @@ export const FAQ_HOME = [
     a: "Not by default. Oven, fridge and cupboard interiors are available as optional additions to eligible bookings and are agreed before the visit.",
   },
   {
-    q: "How does cleaner-hour pricing work?",
-    a: CLEANER_HOUR_EXPLAINER + " Deep Home Reset, move-related work and commercial jobs are priced as a fixed or site quote instead — you'll always receive an expected total before booking.",
+    q: "How does hourly pricing work?",
+    a: CLEANER_HOUR_EXPLAINER + " Deep Home Reset, move-related work and commercial jobs are priced as a fixed or site quote instead.",
   },
   {
     q: "How is pricing calculated?",
-    a: "Recurring Home Care and Premium Housekeeping are priced from a starting rate per cleaner-hour. Final pricing depends on the property, its condition, the service required, frequency, agreed extras and any specific access or scope requirements. You'll receive an expected total quote before the booking is confirmed.",
+    a: "Recurring Home Care and Premium Housekeeping are priced from a starting rate per hour, per cleaner. Final pricing depends on the property, its condition, the service required, frequency, agreed extras and any specific access or scope requirements. You'll receive an expected total quote before the booking is confirmed.",
   },
   {
     q: "Do I need to provide cleaning products?",

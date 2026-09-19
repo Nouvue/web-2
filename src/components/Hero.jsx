@@ -17,7 +17,7 @@ function HeroHome({ openEnquiry }) {
           Thoughtful cleaning, housekeeping and property care serving {SERVICE_AREA}.
         </p>
         <p className="nv-price-cue">
-          Regular Home Care <b>from £{RECURRING_RATE_FROM} per cleaner-hour.</b>
+          Regular Home Care <b>from £{RECURRING_RATE_FROM} per hour, per cleaner.</b>
         </p>
         <div className="nv-hero-ctas">
           <button className="nv-btn nv-btn-primary" onClick={() => openEnquiry("regular")}>

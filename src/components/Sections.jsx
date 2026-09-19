@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { COLORS } from "../config";
-import { IMG, ASSET_MANIFEST, RESULTS_VERIFIED, SERVICES, ADD_ONS, FINISH_ITEMS, PROCESS_HOME, PROCESS_PROPERTY, TRUST_ITEMS, PROPERTY_TRUST_ITEMS, FAQ_HOME, FAQ_PROPERTY, HOME_CLUB_BENEFITS, CLEANER_HOUR_EXPLAINER } from "../data";
+import { IMG, ASSET_MANIFEST, RESULTS_VERIFIED, SERVICES, ADD_ONS, FINISH_ITEMS, PROCESS_HOME, PROCESS_PROPERTY, TRUST_ITEMS, PROPERTY_TRUST_ITEMS, FAQ_HOME, FAQ_PROPERTY, HOME_CLUB_BENEFITS } from "../data";
 import { Aperture, useInView } from "./Aperture";
 
 function ValueSection() {
@@ -50,21 +50,24 @@ function ServicesSection({ openEnquiry }) {
           </div>
         ))}
         <div className="nv-addons">
-          <p className="nv-addons-label">Add a little more</p>
+          <p className="nv-addons-label">Optional additions</p>
           <p className="nv-addons-copy" style={{ marginBottom: 12 }}>
-            Selected extras can be added where suitable, available as optional additions to eligible bookings.
+            Some tasks sit outside the standard Home Care scope. Add them when requesting your quote and
+            we'll confirm the price before you book.
           </p>
           <ul className="nv-finish-list" style={{ maxWidth: 480 }}>
             {ADD_ONS.map((a) => (
-              <li key={a} style={{ borderTop: "1px solid rgba(23,24,23,0.08)" }}>
-                <span>{a}</span>
+              <li key={a.name} style={{ borderTop: "1px solid rgba(23,24,23,0.08)", display: "flex", justifyContent: "space-between", gap: 16 }}>
+                <span>{a.name}</span>
+                <span style={{ color: "var(--nv-mineral, #B8B7B2)", whiteSpace: "nowrap" }}>{a.price}</span>
               </li>
             ))}
           </ul>
+          <p className="nv-field-note" style={{ marginTop: 12, maxWidth: 480 }}>
+            Add-on prices apply when combined with an eligible Nouvue booking. Final price may vary with
+            size and condition.
+          </p>
         </div>
-        <p className="nv-field-note" style={{ marginTop: 28, maxWidth: 560 }}>
-          <b>How cleaner-hour pricing works:</b> {CLEANER_HOUR_EXPLAINER}
-        </p>
       </div>
     </section>
   );

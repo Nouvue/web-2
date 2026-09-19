@@ -20,7 +20,7 @@ import { SERVICE_AREA, RECURRING_RATE_FROM } from "../config";
 function HomePage({ openEnquiry }) {
   useSeo({
     title: "Nouvue | Home Cleaning & Housekeeping | Stevenage & Hertfordshire",
-    description: `Thoughtful home cleaning, housekeeping and property care serving ${SERVICE_AREA}. Recurring care from £${RECURRING_RATE_FROM} per cleaner-hour. Request a tailored quote.`,
+    description: `Thoughtful home cleaning, housekeeping and property care serving ${SERVICE_AREA}. Recurring care from £${RECURRING_RATE_FROM} per hour, per cleaner. Request a tailored quote.`,
     structuredData: true,
     path: "/",
   });

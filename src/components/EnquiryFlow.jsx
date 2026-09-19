@@ -4,6 +4,8 @@ import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_EMAIL_HREF, CONTACT_PHONE_HREF } 
 
 const STAGES = ["Location + service", "Property + date", "Priorities", "Access + details", "Contact", "Review"];
 
+const ADDITION_OPTIONS = ["Oven interior", "Fridge interior", "Inside kitchen cupboards", "Interior windows", "Kitchen detail reset", "Something else"];
+
 const UK_POSTCODE_RE = /^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const UK_PHONE_RE = /^(?:\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$/;
@@ -21,6 +23,7 @@ function EnquiryFlow({ defaultService, onClose }) {
     bathrooms: "",
     date: "",
     priorities: "",
+    additions: [],
     pets: "",
     access: "",
     notes: "",
@@ -81,6 +84,11 @@ function EnquiryFlow({ defaultService, onClose }) {
 
   const set = (k) => (e) => setData((d) => ({ ...d, [k]: e.target.value }));
   const toggle = (k) => (e) => setData((d) => ({ ...d, [k]: e.target.checked }));
+  const toggleAddition = (name) => (e) =>
+    setData((d) => ({
+      ...d,
+      additions: e.target.checked ? [...d.additions, name] : d.additions.filter((a) => a !== name),
+    }));
 
   const validateStep = (s) => {
     const e = {};
@@ -147,6 +155,7 @@ function EnquiryFlow({ defaultService, onClose }) {
           bathrooms: data.bathrooms,
           date: data.date,
           priorities: data.priorities,
+          additions: data.additions.join(", "),
           pets: data.pets || "",
           access: data.access,
           notes: data.notes || "",
@@ -278,6 +287,20 @@ function EnquiryFlow({ defaultService, onClose }) {
                     <span>What matters most for this visit?</span>
                     <textarea value={data.priorities} onChange={set("priorities")} rows={4} placeholder="e.g. kitchen and bathrooms need the most attention" />
                   </label>
+                  <div className="nv-field">
+                    <span>Anything you'd like a price for? (optional)</span>
+                    <div className="nv-checkbox-grid">
+                      {ADDITION_OPTIONS.map((opt) => (
+                        <label key={opt} className="nv-field-checkbox" style={{ marginTop: 0 }}>
+                          <input type="checkbox" checked={data.additions.includes(opt)} onChange={toggleAddition(opt)} />
+                          <span>{opt}</span>
+                        </label>
+                      ))}
+                    </div>
+                    <p className="nv-field-note">
+                      This is a request only — nothing is added to your booking until the price is confirmed.
+                    </p>
+                  </div>
                 </div>
               )}
 
@@ -327,6 +350,7 @@ function EnquiryFlow({ defaultService, onClose }) {
                   <p><b>Postcode:</b> {data.postcode || "—"}</p>
                   <p><b>Property:</b> {data.propertyType || "—"}{data.bedrooms ? ` · ${data.bedrooms} bed` : ""}{data.bathrooms ? ` · ${data.bathrooms} bath` : ""}</p>
                   <p><b>Date:</b> {data.date || "—"}</p>
+                  {data.additions.length > 0 && <p><b>Requested prices for:</b> {data.additions.join(", ")}</p>}
                   <p><b>Contact:</b> {data.name || "—"} · {data.email || "—"} · {data.phone || "—"}</p>
 
                   <label className="nv-field nv-field-checkbox">

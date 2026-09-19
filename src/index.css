@@ -247,6 +247,8 @@ html { scroll-behavior: smooth; }
 .nv-field-checkbox { flex-direction: row; align-items: flex-start; gap: 10px; margin-top: 20px; font-size: 14px; font-weight: 500; cursor: pointer; }
 .nv-field-checkbox input { margin-top: 3px; width: 18px; height: 18px; flex-shrink: 0; }
 .nv-field-checkbox a { color: inherit; text-decoration: underline; }
+.nv-checkbox-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; margin-top: 8px; }
+@media (max-width: 480px) { .nv-checkbox-grid { grid-template-columns: 1fr; } }
 .nv-field input[aria-invalid="true"] { border-color: #8A3B2E; }
 .nv-review p { font-size: 14px; margin: 0 0 10px; }
 .nv-drawer-nav { display: flex; align-items: center; gap: 16px; margin-top: 8px; }
