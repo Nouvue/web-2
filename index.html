@@ -3,11 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nouvue | Home & Property Cleaning in Uxbridge & Hillingdon</title>
+    <!--
+      Static fallback metadata — this is what crawlers, link-preview bots
+      and the very first paint see before React hydrates and useSeo()
+      (see src/seo.js) overwrites it per page. This MUST be kept in sync
+      with HomePage.jsx's useSeo() call, since that is the page this
+      document is served for by default. If the service area or headline
+      offer ever changes again, update both places in the same change —
+      this file previously went stale against the live site once before.
+    -->
+    <title>Nouvue | Home Cleaning & Housekeeping | Stevenage & Hertfordshire</title>
     <meta
       name="description"
-      content="Reliable home and property cleaning across Uxbridge, West Drayton and the wider Hillingdon area. Regular cleaning, home resets and property resets."
+      content="Thoughtful home cleaning, housekeeping and property care serving Stevenage and selected surrounding Hertfordshire areas. Request a tailored quote."
     />
+    <link rel="canonical" href="https://www.nouvue.co.uk/" />
+    <meta property="og:title" content="Nouvue | Home Cleaning & Housekeeping | Stevenage & Hertfordshire" />
+    <meta property="og:description" content="Thoughtful home cleaning, housekeeping and property care serving Stevenage and selected surrounding Hertfordshire areas. Request a tailored quote." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.nouvue.co.uk/" />
+    <meta property="og:site_name" content="Nouvue" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Nouvue | Home Cleaning & Housekeeping | Stevenage & Hertfordshire" />
+    <meta name="twitter:description" content="Thoughtful home cleaning, housekeeping and property care serving Stevenage and selected surrounding Hertfordshire areas." />
     <link
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='27' y='36' width='60' height='42' fill='%230A3478' fill-opacity='0.22' stroke='%230A3478' stroke-width='2'/%3E%3Crect x='13' y='23' width='60' height='42' fill='none' stroke='%230F52BA' stroke-width='3'/%3E%3C/svg%3E"
@@ -30,6 +48,8 @@
       <input type="text" name="service" />
       <input type="text" name="postcode" />
       <input type="text" name="propertyType" />
+      <input type="text" name="bedrooms" />
+      <input type="text" name="bathrooms" />
       <input type="text" name="date" />
       <input type="text" name="priorities" />
       <input type="text" name="pets" />
