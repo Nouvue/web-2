@@ -144,6 +144,9 @@ html { scroll-behavior: smooth; }
 @media (min-width: 760px) { .nv-finish-section { padding-top: 64px; padding-bottom: 64px; } }
 .nv-finish-list { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 10px; max-width: 480px; }
 .nv-finish-list li { display: flex; align-items: baseline; gap: 16px; color: var(--porcelain); border-top: 1px solid rgba(247,246,242,0.15); padding-top: 10px; }
+.nv-addon-list { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 10px; max-width: 480px; }
+.nv-addon-list li { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; color: var(--carbon); border-top: 1px solid rgba(23,24,23,0.12); padding-top: 10px; font-size: 15px; }
+.nv-addon-list li span:last-child { color: var(--slate); white-space: nowrap; font-weight: 600; }
 .nv-finish-num { font-family: 'Instrument Serif', serif; color: var(--sapphire); font-size: 18px; width: 28px; }
 .nv-finish-mark { display: flex; align-items: center; gap: 16px; margin-top: 32px; }
 .nv-finish-aperture-wrap { width: clamp(60px, 16vw, 85px); aspect-ratio: 1; flex-shrink: 0; }

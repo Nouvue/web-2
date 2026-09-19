@@ -55,11 +55,11 @@ function ServicesSection({ openEnquiry }) {
             Some tasks sit outside the standard Home Care scope. Add them when requesting your quote and
             we'll confirm the price before you book.
           </p>
-          <ul className="nv-finish-list" style={{ maxWidth: 480 }}>
+          <ul className="nv-addon-list">
             {ADD_ONS.map((a) => (
-              <li key={a.name} style={{ borderTop: "1px solid rgba(23,24,23,0.08)", display: "flex", justifyContent: "space-between", gap: 16 }}>
+              <li key={a.name}>
                 <span>{a.name}</span>
-                <span style={{ color: "var(--nv-mineral, #B8B7B2)", whiteSpace: "nowrap" }}>{a.price}</span>
+                <span>{a.price}</span>
               </li>
             ))}
           </ul>
