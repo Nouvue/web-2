@@ -6,6 +6,7 @@ function CancellationsPage() {
   useSeo({
     title: "Cancellation & Rescheduling Policy | Nouvue",
     description: "How cancellations and rescheduling work with Nouvue.",
+    path: "/cancellations",
   });
 
   return (

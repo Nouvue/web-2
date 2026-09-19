@@ -1,5 +1,5 @@
 import React from "react";
-import { COLORS } from "../config";
+import { COLORS, SERVICE_AREA, RECURRING_RATE_FROM } from "../config";
 import { IMG } from "../data";
 import { Aperture, useInView } from "./Aperture";
 
@@ -14,21 +14,20 @@ function HeroHome({ openEnquiry }) {
           changes how it feels.
         </h1>
         <p className="nv-hero-sub">
-          Thoughtful cleaning, housekeeping and property care from our Uxbridge base, serving selected homes
-          and properties across West London &amp; South Buckinghamshire.
+          Thoughtful cleaning, housekeeping and property care serving {SERVICE_AREA}.
         </p>
         <p className="nv-price-cue">
-          Regular Home Care <b>from £105 per visit.</b>
+          Regular Home Care <b>from £{RECURRING_RATE_FROM} per cleaner-hour.</b>
         </p>
         <div className="nv-hero-ctas">
           <button className="nv-btn nv-btn-primary" onClick={() => openEnquiry("regular")}>
-            Get Your Quote
+            Get My Quote
           </button>
           <a className="nv-text-link" href="#services">
             Explore Services →
           </a>
         </div>
-        <p className="nv-field-note" style={{ marginTop: 4 }}>Clear scope and final price confirmed before booking.</p>
+        <p className="nv-field-note" style={{ marginTop: 4 }}>Clear scope and an expected total quote confirmed before booking.</p>
         <div className="nv-hero-trust-row">
           <div>
             <h4>Clear from the start</h4>
@@ -39,8 +38,8 @@ function HeroHome({ openEnquiry }) {
             <p>Final detail check before completion.</p>
           </div>
           <div>
-            <h4>Uxbridge-based</h4>
-            <p>Serving West London &amp; South Bucks.</p>
+            <h4>Stevenage-based</h4>
+            <p>Serving Stevenage &amp; Hertfordshire.</p>
           </div>
         </div>
       </div>
@@ -63,15 +62,15 @@ function HeroProperty({ openEnquiry }) {
             Ready.
           </h1>
           <p className="nv-hero-sub nv-hero-sub-ink">
-            Moving and property preparation from our Uxbridge base, across West London &amp; South
-            Buckinghamshire — for landlords, letting agents and property professionals.
+            Moving and property preparation across {SERVICE_AREA} — for landlords, letting agents
+            and property professionals.
           </p>
           <p className="nv-price-cue nv-price-cue-ink">
             A property ready for what comes next.
           </p>
           <div className="nv-hero-ctas">
             <button className="nv-btn nv-btn-primary" onClick={() => openEnquiry("property")}>
-              Get Your Quote
+              Get My Quote
             </button>
           </div>
           <div className="nv-proof-strip">

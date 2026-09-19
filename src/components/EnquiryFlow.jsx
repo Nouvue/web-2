@@ -17,6 +17,8 @@ function EnquiryFlow({ defaultService, onClose }) {
     postcode: "",
     service: defaultService || "regular",
     propertyType: "",
+    bedrooms: "",
+    bathrooms: "",
     date: "",
     priorities: "",
     pets: "",
@@ -141,6 +143,8 @@ function EnquiryFlow({ defaultService, onClose }) {
           service: data.service,
           postcode: data.postcode,
           propertyType: data.propertyType,
+          bedrooms: data.bedrooms,
+          bathrooms: data.bathrooms,
           date: data.date,
           priorities: data.priorities,
           pets: data.pets || "",
@@ -223,8 +227,10 @@ function EnquiryFlow({ defaultService, onClose }) {
                     <span>Service</span>
                     <select value={data.service} onChange={set("service")}>
                       <option value="regular">Regular Home Care</option>
+                      <option value="housekeeping">Premium Housekeeping</option>
                       <option value="reset">Deep Home Reset</option>
                       <option value="property">Moving &amp; Property Preparation</option>
+                      <option value="business">Commercial &amp; Property Care</option>
                     </select>
                   </label>
                   <p className="nv-field-note">This is a request, not a booking. Nothing is charged and no date is confirmed until we get back to you.</p>
@@ -235,7 +241,29 @@ function EnquiryFlow({ defaultService, onClose }) {
                 <div className="nv-field-group">
                   <label className="nv-field">
                     <span>Property type</span>
-                    <input value={data.propertyType} onChange={set("propertyType")} placeholder="e.g. 2-bed flat" />
+                    <input value={data.propertyType} onChange={set("propertyType")} placeholder="e.g. flat, terraced house" />
+                  </label>
+                  <label className="nv-field">
+                    <span>Bedrooms</span>
+                    <select value={data.bedrooms} onChange={set("bedrooms")}>
+                      <option value="">Select…</option>
+                      <option value="Studio">Studio</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5+">5+</option>
+                    </select>
+                  </label>
+                  <label className="nv-field">
+                    <span>Bathrooms</span>
+                    <select value={data.bathrooms} onChange={set("bathrooms")}>
+                      <option value="">Select…</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4+">4+</option>
+                    </select>
                   </label>
                   <label className="nv-field">
                     <span>Preferred date</span>
@@ -297,7 +325,7 @@ function EnquiryFlow({ defaultService, onClose }) {
                 <div className="nv-review">
                   <p><b>Service:</b> {data.service}</p>
                   <p><b>Postcode:</b> {data.postcode || "—"}</p>
-                  <p><b>Property:</b> {data.propertyType || "—"}</p>
+                  <p><b>Property:</b> {data.propertyType || "—"}{data.bedrooms ? ` · ${data.bedrooms} bed` : ""}{data.bathrooms ? ` · ${data.bathrooms} bath` : ""}</p>
                   <p><b>Date:</b> {data.date || "—"}</p>
                   <p><b>Contact:</b> {data.name || "—"} · {data.email || "—"} · {data.phone || "—"}</p>
 
@@ -332,7 +360,7 @@ function EnquiryFlow({ defaultService, onClose }) {
                   <button className="nv-btn nv-btn-primary" onClick={next}>Continue</button>
                 )}
                 {step === STAGES.length - 1 && (
-                  <button className="nv-btn nv-btn-primary" onClick={submit}>Send enquiry</button>
+                  <button className="nv-btn nv-btn-primary" onClick={submit} disabled={status !== "idle"}>Send enquiry</button>
                 )}
               </div>
             </>

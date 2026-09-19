@@ -6,6 +6,7 @@ function PrivacyPage() {
   useSeo({
     title: "Privacy Notice | Nouvue",
     description: "How Nouvue collects, uses and protects your personal information.",
+    path: "/privacy",
   });
 
   return (

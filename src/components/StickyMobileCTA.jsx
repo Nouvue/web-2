@@ -34,7 +34,7 @@ function StickyMobileCTA({ page, openEnquiry, enquiryOpen }) {
   return (
     <div className="nv-sticky-cta">
       <button className="nv-btn nv-btn-primary nv-sticky-btn" onClick={() => openEnquiry(page === "property" ? "property" : "regular")}>
-        Get Your Quote
+        Get My Quote
       </button>
     </div>
   );

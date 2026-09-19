@@ -7,6 +7,7 @@ import {
   CONTACT_EMAIL_HREF,
   CONTACT_PHONE_HREF,
   LEGAL_LINKS,
+  SERVICE_AREA_SHORT,
 } from "../config";
 import { Aperture } from "./Aperture";
 
@@ -22,12 +23,13 @@ function Footer() {
             <span className="nv-brand-text">Nouvue</span>
           </div>
           <p className="nv-footer-sub">Home &amp; Property Cleaning</p>
-          <p className="nv-footer-area">Based in Uxbridge · West London &amp; South Buckinghamshire</p>
+          <p className="nv-footer-area">Serving {SERVICE_AREA_SHORT}</p>
         </div>
 
         <nav className="nv-footer-zone nv-footer-nav" aria-label="Footer">
           <button className="nv-footer-link" onClick={() => navigate("/")}>Home</button>
           <button className="nv-footer-link" onClick={() => navigate("/property")}>Property</button>
+          <a className="nv-footer-link" href="/#home-club">Home Club</a>
           <a className="nv-footer-link" href="/#results">Results</a>
           <a className="nv-footer-link" href="/#faq">FAQ</a>
         </nav>

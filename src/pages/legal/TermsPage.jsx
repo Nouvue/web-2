@@ -6,6 +6,7 @@ function TermsPage() {
   useSeo({
     title: "Terms of Service | Nouvue",
     description: "The terms that apply when you use the Nouvue website or book a cleaning service.",
+    path: "/terms",
   });
 
   return (
@@ -17,7 +18,7 @@ function TermsPage() {
         <h2>About Nouvue</h2>
         <p>
           Nouvue is a trading name of Jane Oladeinde, a sole trader. Nouvue provides home and property
-          care across Uxbridge, West London and South Buckinghamshire.
+          care across Stevenage and selected surrounding Hertfordshire areas.
         </p>
         <p>
           Email: <a href={CONTACT_EMAIL_HREF}>{CONTACT_EMAIL}</a>
@@ -66,9 +67,10 @@ function TermsPage() {
 
         <h2>If something is missed or goes wrong</h2>
         <p>
-          Tell us as soon as reasonably possible if an agreed-scope item appears to have been missed or if
-          you believe damage occurred. Where appropriate, we may inspect and offer a reasonable corrective
-          clean or another proportionate remedy. Prompt reporting does not remove statutory rights.
+          If we've missed something within the agreed scope, let us know within 24 hours and we'll arrange
+          to put it right at no extra charge. If you believe damage occurred, tell us as soon as reasonably
+          possible so we can inspect and agree a fair remedy. Prompt reporting does not remove statutory
+          rights.
         </p>
 
         <h2>Liability</h2>

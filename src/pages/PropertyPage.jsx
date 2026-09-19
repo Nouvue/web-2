@@ -9,13 +9,14 @@ import {
   ClosingCTA,
 } from "../components/Sections";
 import { PROCESS_PROPERTY } from "../data";
+import { SERVICE_AREA } from "../config";
 
 function PropertyPage({ openEnquiry }) {
   useSeo({
-    title: "Property Care & Preparation | Uxbridge & West London | Nouvue",
-    description:
-      "Moving and property preparation from our Uxbridge base, across West London and South Buckinghamshire — for landlords, letting agents and property professionals.",
+    title: "Property Care & Preparation | Stevenage & Hertfordshire | Nouvue",
+    description: `Moving and property preparation across ${SERVICE_AREA} — for landlords, letting agents and property professionals.`,
     structuredData: false,
+    path: "/property",
   });
 
   return (

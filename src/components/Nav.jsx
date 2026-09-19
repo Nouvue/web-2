@@ -43,13 +43,14 @@ function Nav({ openEnquiry }) {
           {page === "home" && (
             <>
               <a className="nv-nav-link nv-nav-link-anchor" href="#services" style={{ color: COLORS.carbon }}>Services</a>
+              <a className="nv-nav-link nv-nav-link-anchor" href="#home-club" style={{ color: COLORS.carbon }}>Home Club</a>
               <a className="nv-nav-link nv-nav-link-anchor" href="#results" style={{ color: COLORS.carbon }}>Results</a>
             </>
           )}
           <a className="nv-nav-link nv-nav-link-anchor" href="#faq" style={{ color: inkText }}>FAQ</a>
         </nav>
         <button className="nv-btn nv-btn-primary nv-nav-cta" onClick={() => openEnquiry(page === "property" ? "property" : "")}>
-          Get Your Quote
+          Get My Quote
         </button>
       </div>
     </header>

@@ -6,6 +6,7 @@ import {
   ServicesSection,
   NoJudgementSection,
   NouvueFinishSection,
+  HomeClubSection,
   ResultsSection,
   ProcessSection,
   TrustSection,
@@ -14,13 +15,14 @@ import {
   ClosingCTA,
 } from "../components/Sections";
 import { PROCESS_HOME } from "../data";
+import { SERVICE_AREA, RECURRING_RATE_FROM } from "../config";
 
 function HomePage({ openEnquiry }) {
   useSeo({
-    title: "Nouvue | Home Cleaning & Housekeeping | Uxbridge & West London",
-    description:
-      "Thoughtful home cleaning, housekeeping and property care from our Uxbridge base, serving selected areas across West London and South Buckinghamshire. Request a tailored quote.",
+    title: "Nouvue | Home Cleaning & Housekeeping | Stevenage & Hertfordshire",
+    description: `Thoughtful home cleaning, housekeeping and property care serving ${SERVICE_AREA}. Recurring care from £${RECURRING_RATE_FROM} per cleaner-hour. Request a tailored quote.`,
     structuredData: true,
+    path: "/",
   });
 
   return (
@@ -30,6 +32,7 @@ function HomePage({ openEnquiry }) {
       <ServicesSection openEnquiry={openEnquiry} />
       <NoJudgementSection />
       <NouvueFinishSection />
+      <HomeClubSection openEnquiry={openEnquiry} />
       <ResultsSection openEnquiry={openEnquiry} />
       <ProcessSection steps={PROCESS_HOME} title="How it works" />
       <TrustSection page="home" />

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { COLORS } from "../config";
-import { IMG, ASSET_MANIFEST, RESULTS_VERIFIED, SERVICES, ADD_ONS, FINISH_ITEMS, PROCESS_HOME, PROCESS_PROPERTY, TRUST_ITEMS, PROPERTY_TRUST_ITEMS, FAQ_HOME, FAQ_PROPERTY } from "../data";
+import { IMG, ASSET_MANIFEST, RESULTS_VERIFIED, SERVICES, ADD_ONS, FINISH_ITEMS, PROCESS_HOME, PROCESS_PROPERTY, TRUST_ITEMS, PROPERTY_TRUST_ITEMS, FAQ_HOME, FAQ_PROPERTY, HOME_CLUB_BENEFITS, CLEANER_HOUR_EXPLAINER } from "../data";
 import { Aperture, useInView } from "./Aperture";
 
 function ValueSection() {
@@ -62,6 +62,9 @@ function ServicesSection({ openEnquiry }) {
             ))}
           </ul>
         </div>
+        <p className="nv-field-note" style={{ marginTop: 28, maxWidth: 560 }}>
+          <b>How cleaner-hour pricing works:</b> {CLEANER_HOUR_EXPLAINER}
+        </p>
       </div>
     </section>
   );
@@ -117,6 +120,35 @@ function NouvueFinishSection() {
   );
 }
 
+function HomeClubSection({ openEnquiry }) {
+  return (
+    <section className="nv-section" id="home-club">
+      <div className="nv-container nv-container-trust">
+        <p className="nv-eyebrow">Nouvue Home Club</p>
+        <h2 className="nv-h2-mid">Recurring care, without the admin.</h2>
+        <p className="nv-lede" style={{ marginBottom: 8 }}>
+          Book Regular Home Care or Premium Housekeeping on a weekly or fortnightly schedule and you're
+          automatically part of the Nouvue Home Club — no separate membership fee, no extra sign-up.
+        </p>
+        <div className="nv-trust-list">
+          {HOME_CLUB_BENEFITS.map((it) => (
+            <div className="nv-trust-row" key={it.t}>
+              <h4>{it.t}</h4>
+              <p>{it.d}</p>
+            </div>
+          ))}
+        </div>
+        <p className="nv-lede-tight" style={{ marginTop: 20 }}>
+          Come home to done, on a schedule you don't have to think about.
+        </p>
+        <button className="nv-text-link" onClick={() => openEnquiry("regular")} style={{ marginTop: 4 }}>
+          Get My Quote →
+        </button>
+      </div>
+    </section>
+  );
+}
+
 function ResultsSection({ openEnquiry }) {
   const pendingCount = ASSET_MANIFEST.filter(
     (a) => a.type === "composite" && a.usageStatus === "unknown"
@@ -162,14 +194,14 @@ function ResultsSection({ openEnquiry }) {
                 : "This section is awaiting confirmed before-and-after photography from completed Nouvue visits."}
             </p>
             <button className="nv-text-link" onClick={() => openEnquiry("regular")}>
-              Get Your Quote →
+              Get My Quote →
             </button>
           </div>
         )}
         {RESULTS_VERIFIED.length > 0 && (
           <p className="nv-results-cta">
             <button className="nv-text-link" onClick={() => openEnquiry("regular")}>
-              Need something similar? Get Your Quote →
+              Need something similar? Get My Quote →
             </button>
           </p>
         )}
@@ -235,7 +267,7 @@ function PropertyIntroSection({ openEnquiry }) {
               confirm the scope, availability and pricing before the work is accepted.
             </p>
             <button className="nv-text-link" onClick={() => openEnquiry("property")}>
-              Get Your Quote →
+              Get My Quote →
             </button>
             <div className="nv-already-box">
               <h4>Already have a cleaner?</h4>
@@ -296,7 +328,7 @@ function ClosingCTA({ page, openEnquiry }) {
             <h2 className="nv-h2 nv-h2-ink">A property ready for what comes next.</h2>
             <p className="nv-lede nv-lede-ink">Tell us about the property and we'll confirm availability, scope and pricing.</p>
             <button className="nv-btn nv-btn-primary" onClick={() => openEnquiry("property")}>
-              Get Your Quote
+              Get My Quote
             </button>
           </>
         ) : (
@@ -308,7 +340,7 @@ function ClosingCTA({ page, openEnquiry }) {
             </h2>
             <p className="nv-lede nv-lede-ink">Tell us about your home and we'll confirm availability, scope and pricing.</p>
             <button className="nv-btn nv-btn-primary" onClick={() => openEnquiry("regular")}>
-              Get Your Quote
+              Get My Quote
             </button>
           </>
         )}
@@ -323,6 +355,7 @@ export {
   ServicesSection,
   NoJudgementSection,
   NouvueFinishSection,
+  HomeClubSection,
   ResultsSection,
   ProcessSection,
   TrustSection,
